@@ -33,70 +33,83 @@ namespace SisTemTec.Formularios
             this.TxtSenha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnEntrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtUsuario
             // 
-            this.TxtUsuario.Location = new System.Drawing.Point(62, 69);
+            this.TxtUsuario.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtUsuario.Location = new System.Drawing.Point(62, 74);
             this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(100, 23);
+            this.TxtUsuario.Size = new System.Drawing.Size(100, 22);
             this.TxtUsuario.TabIndex = 0;
             // 
             // TxtSenha
             // 
-            this.TxtSenha.Location = new System.Drawing.Point(62, 132);
+            this.TxtSenha.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtSenha.Location = new System.Drawing.Point(62, 141);
             this.TxtSenha.Name = "TxtSenha";
-            this.TxtSenha.Size = new System.Drawing.Size(100, 23);
+            this.TxtSenha.Size = new System.Drawing.Size(100, 22);
             this.TxtSenha.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 51);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(62, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
+            this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuário";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 114);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(62, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
+            this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Senha";
             // 
-            // button1
+            // BtnEntrar
             // 
-            this.button1.Location = new System.Drawing.Point(62, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Entrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnEntrar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnEntrar.FlatAppearance.BorderSize = 0;
+            this.BtnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEntrar.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEntrar.Location = new System.Drawing.Point(62, 203);
+            this.BtnEntrar.Name = "BtnEntrar";
+            this.BtnEntrar.Size = new System.Drawing.Size(100, 30);
+            this.BtnEntrar.TabIndex = 4;
+            this.BtnEntrar.Text = "Entrar";
+            this.BtnEntrar.UseVisualStyleBackColor = false;
+            this.BtnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.TxtSenha);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.BtnEntrar);
             this.panel1.Controls.Add(this.TxtUsuario);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(50, 52);
+            this.panel1.Location = new System.Drawing.Point(50, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(224, 265);
+            this.panel1.Size = new System.Drawing.Size(224, 283);
             this.panel1.TabIndex = 5;
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 369);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(324, 394);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
@@ -115,7 +128,7 @@ namespace SisTemTec.Formularios
         private System.Windows.Forms.TextBox TxtSenha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnEntrar;
         private System.Windows.Forms.Panel panel1;
     }
 }

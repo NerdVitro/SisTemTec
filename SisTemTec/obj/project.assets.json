@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SisTemTec\\SisTemTec\\SisTemTec\\SisTemTec.csproj",
+      "projectUniqueName": "C:\\Users\\vitro\\Documents\\GitHub\\SisTemTec\\SisTemTec\\SisTemTec.csproj",
       "projectName": "SisTemTec",
-      "projectPath": "E:\\SisTemTec\\SisTemTec\\SisTemTec\\SisTemTec.csproj",
+      "projectPath": "C:\\Users\\vitro\\Documents\\GitHub\\SisTemTec\\SisTemTec\\SisTemTec.csproj",
       "packagesPath": "C:\\Users\\vitro\\.nuget\\packages\\",
-      "outputPath": "E:\\SisTemTec\\SisTemTec\\SisTemTec\\obj\\",
+      "outputPath": "C:\\Users\\vitro\\Documents\\GitHub\\SisTemTec\\SisTemTec\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vitro\\AppData\\Roaming\\NuGet\\NuGet.Config",

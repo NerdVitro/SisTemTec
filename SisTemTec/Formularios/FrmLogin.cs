@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SisTemTec.Classes;
+using SisTemTec.Core.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,5 +21,25 @@ namespace SisTemTec.Formularios
             InitializeComponent();
         }
 
+        private void BtnEntrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Login login = new Login();
+                if (login.ValidarAcesso(TxtUsuario.Text,TxtSenha.Text))
+                {
+                    _Resultado = true;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(login.Messagem);
+                }
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
     }
 }
