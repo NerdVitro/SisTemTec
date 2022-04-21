@@ -1,0 +1,17 @@
+E:\SisTemTec\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.exe
+E:\SisTemTec\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.deps.json
+E:\SisTemTec\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.runtimeconfig.json
+E:\SisTemTec\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.runtimeconfig.dev.json
+E:\SisTemTec\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.dll
+E:\SisTemTec\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.pdb
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.AssemblyReference.cache
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.FrmLogin.resources
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.FrmPrincipal.resources
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.GenerateResource.cache
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.GeneratedMSBuildEditorConfig.editorconfig
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.AssemblyInfoInputs.cache
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.AssemblyInfo.cs
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.CoreCompileInputs.cache
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.dll
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.pdb
+E:\SisTemTec\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.genruntimeconfig.cache
