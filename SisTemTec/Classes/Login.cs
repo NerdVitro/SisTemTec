@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisTemTec.Banco;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +15,6 @@ namespace SisTemTec.Classes
         {
             try
             {
-                return true;
                 if (string.IsNullOrEmpty(parUsu))
                 {
                     _Messagem = "Favor Informar Usuário";
@@ -25,14 +25,9 @@ namespace SisTemTec.Classes
                     _Messagem = "Favor Informar Senha";
                     return false;
                 }
-                else if (parUsu.ToLower() != "vitor.souza")
+                else if (!new ObterDados().Usuario(parUsu, parSen))
                 {
-                    _Messagem = "Usuário não encontrado";
-                    return false;
-                }
-                else if (parSen.ToLower() != "1234")
-                {
-                    _Messagem = "Senha Incorreta";
+                    _Messagem = "Usuário ou Senha Incorreto(a)";
                     return false;
                 }
                 else

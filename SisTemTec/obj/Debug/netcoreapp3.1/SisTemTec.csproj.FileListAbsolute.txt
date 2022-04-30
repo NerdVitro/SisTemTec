@@ -34,3 +34,10 @@ C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisT
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.dll
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.pdb
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.genruntimeconfig.cache
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.CopyComplete

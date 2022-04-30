@@ -12,9 +12,7 @@ namespace SisTemTec.Formularios
 {
     public partial class FrmLogin : Form
     {
-        private bool _Resultado = false;
-
-        public bool Resultado { get => _Resultado;}
+        public bool Resultado { get; set; } = false;
 
         public FrmLogin()
         {
@@ -28,12 +26,20 @@ namespace SisTemTec.Formularios
                 Login login = new Login();
                 if (login.ValidarAcesso(TxtUsuario.Text,TxtSenha.Text))
                 {
-                    _Resultado = true;
+                    Resultado = true;
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show(login.Messagem);
+                    if (login.Messagem.Contains("Usuário"))
+                    {
+                        TxtUsuario.Focus();
+                    }
+                    else 
+                    {
+                        TxtSenha.Focus();
+                    }
                 }
             }
             catch (Exception ex)
