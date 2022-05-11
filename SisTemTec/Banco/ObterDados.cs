@@ -8,20 +8,17 @@ using System.Text;
 
 namespace SisTemTec.Banco
 {
-    public class ObterDados
+    public class ObterDados : ManterObterDados
     {
-        readonly private Conexao conexao = new Conexao();
-        readonly private SqlCommand sqlcmd = new SqlCommand();
-        readonly private CultureInfo cultureInfo = new CultureInfo(Constantes.Cultureinfo);
-        private SqlDataReader sqldr;
-
-        public bool Usuario(string parUsu, string parSen)
+        public bool ValidarUsuario(string parUsu, string parSen)
         {
             sqldr = null;
             try
             {
                 sqlcmd.CommandText =
-                    @" SELECT NMSENHA FROM TBTESTEUSU WHERE NMUSUARIO = @NMUSUARIO";
+                     @" SELECT NMSENHA 
+                        FROM TBTESTEUSU 
+                            WHERE NMUSUARIO = @NMUSUARIO ";
 
                 sqlcmd.Parameters.Clear();
                 sqlcmd.Parameters.AddWithValue("@NMUSUARIO", parUsu);

@@ -21,7 +21,6 @@ C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisT
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.runtimeconfig.dev.json
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.dll
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\SisTemTec.pdb
-C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.AssemblyReference.cache
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.FrmOrdemServico.resources
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.FrmLogin.resources
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.FrmPrincipal.resources
@@ -41,3 +40,4 @@ C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runt
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.CopyComplete
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.AssemblyReference.cache

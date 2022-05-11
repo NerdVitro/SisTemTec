@@ -25,7 +25,7 @@ namespace SisTemTec.Classes
                     _Messagem = "Favor Informar Senha";
                     return false;
                 }
-                else if (!new ObterDados().Usuario(parUsu, parSen))
+                else if (!new ObterDados().ValidarUsuario(parUsu, parSen))
                 {
                     _Messagem = "Usuário ou Senha Incorreto(a)";
                     return false;

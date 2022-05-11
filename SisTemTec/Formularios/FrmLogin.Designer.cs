@@ -45,6 +45,7 @@ namespace SisTemTec.Formularios
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(100, 22);
             this.TxtUsuario.TabIndex = 0;
+            this.TxtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsuario_KeyPress);
             // 
             // TxtSenha
             // 
@@ -53,6 +54,8 @@ namespace SisTemTec.Formularios
             this.TxtSenha.Name = "TxtSenha";
             this.TxtSenha.Size = new System.Drawing.Size(100, 22);
             this.TxtSenha.TabIndex = 1;
+            this.TxtSenha.UseSystemPasswordChar = true;
+            this.TxtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSenha_KeyPress);
             // 
             // label1
             // 

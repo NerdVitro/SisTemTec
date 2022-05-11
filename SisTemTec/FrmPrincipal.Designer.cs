@@ -35,6 +35,7 @@ namespace SisTemTec
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.TmrClock = new System.Windows.Forms.Timer(this.components);
             this.LblClock = new System.Windows.Forms.Label();
+            this.BtnEstoque = new System.Windows.Forms.Button();
             this.PnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,17 +44,17 @@ namespace SisTemTec
             this.PnlMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PnlMenu.BackColor = System.Drawing.Color.White;
+            this.PnlMenu.Controls.Add(this.BtnEstoque);
             this.PnlMenu.Controls.Add(this.BtnOrdemVenda);
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(200, 771);
+            this.PnlMenu.Size = new System.Drawing.Size(200, 681);
             this.PnlMenu.TabIndex = 0;
             // 
             // BtnOrdemVenda
             // 
             this.BtnOrdemVenda.BackColor = System.Drawing.Color.Silver;
             this.BtnOrdemVenda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnOrdemVenda.FlatAppearance.BorderSize = 0;
             this.BtnOrdemVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOrdemVenda.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnOrdemVenda.Location = new System.Drawing.Point(0, 0);
@@ -74,18 +75,31 @@ namespace SisTemTec
             this.LblClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblClock.AutoSize = true;
             this.LblClock.Font = new System.Drawing.Font("Arial Narrow", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblClock.Location = new System.Drawing.Point(729, 67);
+            this.LblClock.Location = new System.Drawing.Point(850, 67);
             this.LblClock.Name = "LblClock";
             this.LblClock.Size = new System.Drawing.Size(363, 110);
             this.LblClock.TabIndex = 1;
             this.LblClock.Text = "00:00:00";
+            // 
+            // BtnEstoque
+            // 
+            this.BtnEstoque.BackColor = System.Drawing.Color.Silver;
+            this.BtnEstoque.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEstoque.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEstoque.Location = new System.Drawing.Point(0, 67);
+            this.BtnEstoque.Name = "BtnEstoque";
+            this.BtnEstoque.Size = new System.Drawing.Size(200, 67);
+            this.BtnEstoque.TabIndex = 2;
+            this.BtnEstoque.Text = "Estoque";
+            this.BtnEstoque.UseVisualStyleBackColor = false;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1143, 771);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.LblClock);
             this.Controls.Add(this.PnlMenu);
             this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -106,6 +120,7 @@ namespace SisTemTec
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Timer TmrClock;
         private System.Windows.Forms.Label LblClock;
+        private System.Windows.Forms.Button BtnEstoque;
     }
 }
 

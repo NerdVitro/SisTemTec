@@ -17,6 +17,11 @@ namespace SisTemTec.Formularios
         public FrmLogin()
         {
             InitializeComponent();
+            if (Constantes.NomeMaquina == @"DESKTOP-8C0QSSV\SQLEXPRESS")
+            {
+                TxtUsuario.Text = "vitor";
+                TxtSenha.Text = "1234";
+            }
         }
 
         private void BtnEntrar_Click(object sender, EventArgs e)
@@ -45,6 +50,29 @@ namespace SisTemTec.Formularios
             catch (Exception ex)
             {
                 Tratamento.Exception(ex);
+            }
+        }
+
+        private void TxtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == ((char)Keys.Enter))
+                {
+                    TxtSenha.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+
+        private void TxtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ((char)Keys.Enter))
+            {
+                BtnEntrar.PerformClick();
             }
         }
     }
