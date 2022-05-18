@@ -17,7 +17,7 @@ namespace SisTemTec.Banco
             {
                 sqlcmd.CommandText =
                      @" SELECT NMSENHA 
-                        FROM TBTESTEUSU 
+                        FROM TBTECNICO 
                             WHERE NMUSUARIO = @NMUSUARIO ";
 
                 sqlcmd.Parameters.Clear();

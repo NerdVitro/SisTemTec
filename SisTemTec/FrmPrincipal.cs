@@ -17,6 +17,8 @@ namespace SisTemTec
         public FrmPrincipal()
         {
             InitializeComponent();
+            PnlCadastros.Visible = false;
+            PnlEquipamentos.Visible = false;
         }
 
         private void BtnOrdemVenda_Click(object sender, EventArgs e)
@@ -39,6 +41,50 @@ namespace SisTemTec
             try
             {
                 LblClock.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+
+        private void BtnCadastros_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PnlCadastros.Visible)
+                {
+                    PnlCadastros.Visible = false;
+                    PnlEquipamentos.Visible = false;
+                }
+                else
+                {
+                    PnlCadastros.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCadastroEquipamentos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PnlEquipamentos.Visible)
+                {
+                    PnlEquipamentos.Visible = false;
+                }
+                else
+                {
+                    PnlEquipamentos.Visible = true;
+                }
             }
             catch (Exception ex)
             {
