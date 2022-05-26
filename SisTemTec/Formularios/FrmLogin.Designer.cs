@@ -35,6 +35,7 @@ namespace SisTemTec.Formularios
             this.label2 = new System.Windows.Forms.Label();
             this.BtnEntrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnSair = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +95,7 @@ namespace SisTemTec.Formularios
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.BtnSair);
             this.panel1.Controls.Add(this.TxtSenha);
             this.panel1.Controls.Add(this.BtnEntrar);
             this.panel1.Controls.Add(this.TxtUsuario);
@@ -101,15 +103,29 @@ namespace SisTemTec.Formularios
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(50, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(224, 283);
+            this.panel1.Size = new System.Drawing.Size(224, 306);
             this.panel1.TabIndex = 5;
+            // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSair.Location = new System.Drawing.Point(62, 239);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(100, 30);
+            this.BtnSair.TabIndex = 5;
+            this.BtnSair.Text = "Sair";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(324, 394);
+            this.ClientSize = new System.Drawing.Size(324, 417);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -133,5 +149,6 @@ namespace SisTemTec.Formularios
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnEntrar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

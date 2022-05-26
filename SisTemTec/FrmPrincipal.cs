@@ -1,5 +1,6 @@
 ﻿using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Cadastro;
+using SisTemTec.Formularios.Cadastro.Estado;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,27 +21,33 @@ namespace SisTemTec
             PnlCadastros.Visible = false;
             PnlEquipamentos.Visible = false;
         }
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
 
-        private void BtnOrdemVenda_Click(object sender, EventArgs e)
+        }
+        private void TmrClock_Tick(object sender, EventArgs e)
         {
             try
             {
-                using (FrmOrdemServico frmOrdemServico = new FrmOrdemServico())
-                {
-                    frmOrdemServico.ShowDialog();
-                }
+                LblClock.Text = DateTime.Now.ToString("HH:mm:ss");
             }
             catch (Exception ex)
             {
                 Tratamento.Exception(ex);
             }
         }
+        private void OcultarMenus()
+        {
+            PnlCadastros.Visible = false;
+            PnlEquipamentos.Visible = false;
+        }
 
-        private void TmrClock_Tick(object sender, EventArgs e)
+        private void BtnOrdemVenda_Click(object sender, EventArgs e)
         {
             try
             {
-                LblClock.Text = DateTime.Now.ToString("HH:mm:ss");
+                OcultarMenus();
+                new FrmOrdemServico().ShowDialog();
             }
             catch (Exception ex)
             {
@@ -67,12 +74,6 @@ namespace SisTemTec
                 Tratamento.Exception(ex);
             }
         }
-
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnCadastroEquipamentos_Click(object sender, EventArgs e)
         {
             try
@@ -85,6 +86,19 @@ namespace SisTemTec
                 {
                     PnlEquipamentos.Visible = true;
                 }
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+
+        private void BtnCdastrarEstado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OcultarMenus();
+                new FrmEstado().ShowDialog();
             }
             catch (Exception ex)
             {

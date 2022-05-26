@@ -4,6 +4,9 @@ using System.Text;
 
 namespace SisTemTec.Banco.Tabelas
 {
+    /// <summary>
+    /// Tabela de cadastro de Tecnico
+    /// </summary>
     public class TBTECNICO
     {
         private int _IDTECNICO;
@@ -19,9 +22,21 @@ namespace SisTemTec.Banco.Tabelas
             _NMNOME = nMNOME;
         }
 
+        /// <summary>
+        /// Primary Key
+        /// </summary>
         public int IDTECNICO { get => _IDTECNICO; set => _IDTECNICO = value; }
+        /// <summary>
+        /// Foreign key - TBENDERECO
+        /// </summary>
         public int IDENDERECO { get => _IDENDERECO; set => _IDENDERECO = value; }
+        /// <summary>
+        /// Numero do Cpf
+        /// </summary>
         public int NRCPF { get => _NRCPF; set => _NRCPF = value; }
+        /// <summary>
+        /// Nome do tecnico
+        /// </summary>
         public string NMNOME { get => _NMNOME; set => _NMNOME = value; }
     }
 }

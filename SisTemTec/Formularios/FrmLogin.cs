@@ -29,7 +29,7 @@ namespace SisTemTec.Formularios
             try
             {
                 Login login = new Login();
-                if (login.ValidarAcesso(TxtUsuario.Text,TxtSenha.Text))
+                if (login.ValidarAcesso(TxtUsuario.Text, TxtSenha.Text))
                 {
                     Resultado = true;
                     this.Close();
@@ -41,7 +41,7 @@ namespace SisTemTec.Formularios
                     {
                         TxtUsuario.Focus();
                     }
-                    else 
+                    else
                     {
                         TxtSenha.Focus();
                     }
@@ -70,9 +70,29 @@ namespace SisTemTec.Formularios
 
         private void TxtSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == ((char)Keys.Enter))
+            try
             {
-                BtnEntrar.PerformClick();
+                if (e.KeyChar == ((char)Keys.Enter))
+                {
+                    BtnEntrar.PerformClick();
+                }
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Resultado = false;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
             }
         }
     }

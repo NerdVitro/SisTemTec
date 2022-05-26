@@ -2,9 +2,22 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_LastSelectedProfileId>C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Formularios\Cadastro\Cidade\FrmCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Cadastro\Estado\FrmCadEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Cadastro\Estado\FrmEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Cadastro\FrmOrdemServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Padrao\FrmPadraoGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmPrincipal.cs">

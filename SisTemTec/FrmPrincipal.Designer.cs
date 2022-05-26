@@ -249,6 +249,7 @@ namespace SisTemTec
             this.BtnCdastrarEstado.TabIndex = 4;
             this.BtnCdastrarEstado.Text = "Estado";
             this.BtnCdastrarEstado.UseVisualStyleBackColor = false;
+            this.BtnCdastrarEstado.Click += new System.EventHandler(this.BtnCdastrarEstado_Click);
             // 
             // PnlEquipamentos
             // 

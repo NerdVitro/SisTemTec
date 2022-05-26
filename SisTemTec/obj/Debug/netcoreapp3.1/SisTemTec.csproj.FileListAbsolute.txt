@@ -41,3 +41,7 @@ C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runt
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.CopyComplete
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.csproj.AssemblyReference.cache
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Estado.FrmCadEstado.resources
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Estado.FrmEstado.resources
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Padrao.FrmPadraoGerenciar.resources
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Cidade.FrmCidade.resources

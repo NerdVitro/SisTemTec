@@ -4,6 +4,9 @@ using System.Text;
 
 namespace SisTemTec.Banco.Tabelas
 {
+    /// <summary>
+    /// Tabela de cadastro de Tipo Equipamento
+    /// </summary>
     public class TBTIPOEQUIPAMENTO
     {
         private int _IDTIPOEQUIPAMENTO;
@@ -15,7 +18,13 @@ namespace SisTemTec.Banco.Tabelas
             _NMDESCRICAO = nMDESCRICAO;
         }
 
+        /// <summary>
+        /// Primary Key
+        /// </summary>
         public int IDTIPOEQUIPAMENTO { get => _IDTIPOEQUIPAMENTO; set => _IDTIPOEQUIPAMENTO = value; }
+        /// <summary>
+        /// Descrição Tipo de Equipamento
+        /// </summary>
         public string NMDESCRICAO { get => _NMDESCRICAO; set => _NMDESCRICAO = value; }
     }
 }
