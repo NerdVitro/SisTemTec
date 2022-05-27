@@ -47,6 +47,7 @@ namespace SisTemTec.Formularios.Padrao
             // 
             // PnlBotoes
             // 
+            this.PnlBotoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.PnlBotoes.Controls.Add(this.BtnSair);
             this.PnlBotoes.Controls.Add(this.BtnEditar);
             this.PnlBotoes.Controls.Add(this.BtnNovo);

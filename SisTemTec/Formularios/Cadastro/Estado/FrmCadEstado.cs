@@ -1,6 +1,7 @@
 ﻿using SisTemTec.Banco;
 using SisTemTec.Banco.Tabelas;
 using SisTemTec.Core.Classes;
+using SisTemTec.Formularios.Padrao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,58 +12,41 @@ using System.Windows.Forms;
 
 namespace SisTemTec.Formularios.Cadastro.Estado
 {
-    public partial class FrmCadEstado : Form
+    public partial class FrmCadEstado : FrmPadraoCadastro
     {
-        public FrmCadEstado()
+        private int IDESTADO;
+
+        public FrmCadEstado(TBESTADO parTBESTADO)
         {
             InitializeComponent();
+
+            if (parTBESTADO != null)
+            {
+                IDESTADO = parTBESTADO.IDESTADO;
+                TxbNome.Text = parTBESTADO.NMESTADO;
+                TxbSigla.Text = parTBESTADO.NMSIGLA;
+            }
+            else
+            {
+                IDESTADO = 0;
+            }
         }
 
-        private void BtnSalvar_Click(object sender, EventArgs e)
+        protected override bool Salvar()
         {
             try
             {
-                if (Validar())
-                {
-                    if (Salvar())
+                if (new InserirDados().CadastrarEstado(new TBESTADO(IDESTADO,TxbNome.Text, TxbSigla.Text)))
+                 {
+                    if(IDESTADO == 0)
                     {
 
                     }
                     else
                     {
-
+                        this.Close();
                     }
-                }
-                else
-                {
 
-                }
-            }
-            catch (Exception ex)
-            {
-                Tratamento.Exception(ex);
-            }
-        }
-
-        private bool Validar()
-        {
-            try
-            {
-                return true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        private bool Salvar()
-        {
-            try
-            {
-                TBESTADO estado = new TBESTADO(TxbEstado.Text, TxbSigla.Text);
-                InserirDados inserir = new InserirDados();
-                if(inserir.CadastrarEstado(estado))
-                {
                     return true;
                 }
                 else
@@ -70,9 +54,22 @@ namespace SisTemTec.Formularios.Cadastro.Estado
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Tratamento.Exception(ex);
+                return false;
+            }
+        }
+        protected override bool Cancelar()
+        {
+            try
+            {
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+                return false;
             }
         }
     }

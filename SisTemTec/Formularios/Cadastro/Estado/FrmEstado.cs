@@ -1,4 +1,5 @@
-﻿using SisTemTec.Core.Classes;
+﻿using SisTemTec.Banco;
+using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Padrao;
 using System;
 using System.Collections.Generic;
@@ -12,22 +13,19 @@ namespace SisTemTec.Formularios.Cadastro.Estado
 {
     public partial class FrmEstado : FrmPadraoGerenciar
     {
+        DataTable DadosGrid;
+
         public FrmEstado()
         {
             InitializeComponent();
+            LoadDados();
         }
-
 
         protected override void LoadDados()
         {
             try
             {
-                //if (!_ObjProdutosxAdicionaisMobileController.LoadDadosProdutosxAdicionaisMobile(SpoEdtProduto.Text, SpoEdtAdicional.Text, CkbSomenteAtivos.Checked))
-                //{
-                //    _Mensagem.LimparMensagens();
-                //    _Mensagem.A0000_MENSAGEMPADRAO(_ObjProdutosxAdicionaisMobileController.SsxMensagem);
-                //    _Mensagem.Show(ETipoMensagem.Aviso, false);
-                //}
+                DadosGrid = new ObterDados().GetEstados(TxbNome.Text, TxbSigla.Text);
                 AjustarGrid();
             }
             catch (Exception ex)
@@ -40,15 +38,11 @@ namespace SisTemTec.Formularios.Cadastro.Estado
             try
             {
                 FormatarGridView objFormatarGridView = new FormatarGridView(DgvDados);
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("PRO", "Produto", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("DESC", "Descricao", 300, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.None));
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("TIPO", "tipo", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.None));
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("iddododod", "id", false));
-                DataTable Dados = new DataTable();
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("Estado", "NMESTADO", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("Sigla", "NMSIGLA", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.None));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("ID", "IDESTADO", false));
 
-                objFormatarGridView.Finalizar(Dados);
-
-                base.LoadDados();
+                objFormatarGridView.Finalizar(DadosGrid);
             }
             catch (Exception ex)
             {
@@ -59,13 +53,7 @@ namespace SisTemTec.Formularios.Cadastro.Estado
         {
             try
             {
-                //_ObjProdutosxAdicionaisMobileController.IDRLCPAD021 = 0;
-                //_ObjProdutosxAdicionaisMobileController.IsInsert = true;
-                //using (FrmCadTBRLC021PAD_DSK Novo = new FrmCadTBRLC021PAD_DSK(objBaseFrpSoftiseEVODesktop, _ObjProdutosxAdicionaisMobileController))
-                //{
-                //    Novo.ShowDialog();
-                //}
-
+                new FrmCadEstado(null).ShowDialog();
                 LoadDados();
             }
             catch (Exception ex)
@@ -77,27 +65,11 @@ namespace SisTemTec.Formularios.Cadastro.Estado
         {
             try
             {
-                //_ObjProdutosxAdicionaisMobileController.IDRLCPAD021 = DgvConsulta.CurrentRow is null ? 0 : Convert.ToInt32(DgvConsulta.CurrentRow.Cells["IDRLCPAD021"].Value);
-
-                //if (_ObjProdutosxAdicionaisMobileController.IDRLCPAD021 > 0)
-                //{
-                //    if (_ObjProdutosxAdicionaisMobileController.GetProdutosxAdicionaisByIdEvoDesk())
-                //    {
-                //        _ObjProdutosxAdicionaisMobileController.IsInsert = false;
-                //        using (FrmCadTBRLC021PAD_DSK Novo = new FrmCadTBRLC021PAD_DSK(objBaseFrpSoftiseEVODesktop, _ObjProdutosxAdicionaisMobileController))
-                //        {
-                //            Novo.ShowDialog();
-                //        }
-
-                //        LoadDados();
-                //    }
-                //    else
-                //    {
-                //        _Mensagem.LimparMensagens();
-                //        _Mensagem.A0000_MENSAGEMPADRAO(_ObjProdutosxAdicionaisMobileController.SsxMensagem);
-                //        _Mensagem.Show(ETipoMensagem.Advertencia, false);
-                //    }
-                //}
+                if (DgvDados.CurrentRow != null)
+                {
+                    new FrmCadEstado(new ObterDados().GetEstadoById(Convert.ToInt32(DgvDados.CurrentRow.Cells["IDESTADO"].Value))).ShowDialog();
+                }
+                LoadDados();
             }
             catch (Exception ex)
             {

@@ -26,8 +26,7 @@ namespace SisTemTec.Core.Classes
         {
             objLstColunas.Add(parColuna);
         }
-
-        public void Finalizar(Object listaObjetos)
+        public DataGridView Finalizar(Object listaObjetos)
         {
             FormatarColunas objColuna;
             dataGridView.DataSource = listaObjetos;
@@ -60,8 +59,8 @@ namespace SisTemTec.Core.Classes
             {
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
+            return dataGridView;
         }
-
         private void Configurar()
         {
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Forma de seleção será linha inteira
@@ -74,10 +73,6 @@ namespace SisTemTec.Core.Classes
             dataGridView.ColumnHeadersVisible = true;       // Cabeçalhos das colunas são visíveis
         }
     }
-
-
-
-
 
     public class FormatarColunas
     {

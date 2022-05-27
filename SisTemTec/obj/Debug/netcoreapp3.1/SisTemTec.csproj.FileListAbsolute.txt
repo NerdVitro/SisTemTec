@@ -45,3 +45,4 @@ C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisT
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Estado.FrmEstado.resources
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Padrao.FrmPadraoGerenciar.resources
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Cidade.FrmCidade.resources
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Padrao.FrmPadraoCadastro.resources

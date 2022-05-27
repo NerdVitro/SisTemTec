@@ -13,8 +13,9 @@ namespace SisTemTec.Banco.Tabelas
         private string _NMESTADO;
         private string _NMSIGLA;
 
-        public TBESTADO(string nMESTADO, string nMSIGLA)
+        public TBESTADO(int iDESTADO, string nMESTADO, string nMSIGLA)
         {
+            _IDESTADO = iDESTADO;
             _NMESTADO = nMESTADO;
             _NMSIGLA = nMSIGLA;
         }
