@@ -11,5 +11,9 @@ namespace SisTemTec.Core.Classes
         {
             MessageBox.Show(ex.Message + "\n\n" + ex.StackTrace);
         }
+        static public void MostrarMensagem(string Mensagem)
+        {
+            MessageBox.Show(Mensagem);
+        }
     }
 }

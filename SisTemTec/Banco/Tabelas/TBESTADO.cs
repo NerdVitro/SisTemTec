@@ -13,13 +13,6 @@ namespace SisTemTec.Banco.Tabelas
         private string _NMESTADO;
         private string _NMSIGLA;
 
-        public TBESTADO(int iDESTADO, string nMESTADO, string nMSIGLA)
-        {
-            _IDESTADO = iDESTADO;
-            _NMESTADO = nMESTADO;
-            _NMSIGLA = nMSIGLA;
-        }
-
         /// <summary>
         /// Primary Key
         /// </summary>
@@ -29,5 +22,16 @@ namespace SisTemTec.Banco.Tabelas
         /// </summary>
         public string NMESTADO { get => _NMESTADO; set => _NMESTADO = value; }
         public string NMSIGLA { get => _NMSIGLA; set => _NMSIGLA = value; }
+
+        public TBESTADO(int iDESTADO, string nMESTADO, string nMSIGLA)
+        {
+            _IDESTADO = iDESTADO;
+            _NMESTADO = nMESTADO;
+            _NMSIGLA = nMSIGLA;
+        }
+        public TBESTADO()
+        {
+
+        }
     }
 }

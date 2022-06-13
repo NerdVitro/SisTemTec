@@ -52,16 +52,18 @@ namespace SisTemTec.Formularios.Cadastro.Estado
             // 
             // TxbNome
             // 
-            this.TxbNome.Location = new System.Drawing.Point(36, 53);
+            this.TxbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbNome.Location = new System.Drawing.Point(36, 49);
             this.TxbNome.Name = "TxbNome";
-            this.TxbNome.Size = new System.Drawing.Size(349, 23);
+            this.TxbNome.Size = new System.Drawing.Size(349, 29);
             this.TxbNome.TabIndex = 2;
             // 
             // TxbSigla
             // 
-            this.TxbSigla.Location = new System.Drawing.Point(413, 53);
+            this.TxbSigla.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbSigla.Location = new System.Drawing.Point(413, 47);
             this.TxbSigla.Name = "TxbSigla";
-            this.TxbSigla.Size = new System.Drawing.Size(107, 23);
+            this.TxbSigla.Size = new System.Drawing.Size(107, 29);
             this.TxbSigla.TabIndex = 3;
             // 
             // label1
@@ -90,7 +92,7 @@ namespace SisTemTec.Formularios.Cadastro.Estado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(898, 543);
             this.Name = "FrmEstado";
-            this.Text = "FrmEstado";
+            this.Text = "Gerenciar Cadastro Estado";
             this.PnlBotoes.ResumeLayout(false);
             this.PnlFiltros.ResumeLayout(false);
             this.PnlFiltros.PerformLayout();

@@ -1,5 +1,6 @@
 ﻿using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Cadastro;
+using SisTemTec.Formularios.Cadastro.Cidade;
 using SisTemTec.Formularios.Cadastro.Estado;
 using System;
 using System.Collections.Generic;
@@ -99,6 +100,19 @@ namespace SisTemTec
             {
                 OcultarMenus();
                 new FrmEstado().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+
+        private void BtnCadastroCidade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OcultarMenus();
+                new FrmCidade().ShowDialog();
             }
             catch (Exception ex)
             {

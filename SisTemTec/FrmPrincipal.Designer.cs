@@ -113,7 +113,6 @@ namespace SisTemTec
             // TmrClock
             // 
             this.TmrClock.Enabled = true;
-            this.TmrClock.Tick += new System.EventHandler(this.TmrClock_Tick);
             // 
             // LblClock
             // 
@@ -236,6 +235,7 @@ namespace SisTemTec
             this.BtnCadastroCidade.TabIndex = 5;
             this.BtnCadastroCidade.Text = "Cidade";
             this.BtnCadastroCidade.UseVisualStyleBackColor = false;
+            this.BtnCadastroCidade.Click += new System.EventHandler(this.BtnCadastroCidade_Click);
             // 
             // BtnCdastrarEstado
             // 

@@ -1,4 +1,5 @@
 ﻿using SisTemTec.Banco;
+using SisTemTec.Banco.Manter;
 using SisTemTec.Banco.Tabelas;
 using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Padrao;
@@ -19,6 +20,7 @@ namespace SisTemTec.Formularios.Cadastro.Estado
         public FrmCadEstado(TBESTADO parTBESTADO)
         {
             InitializeComponent();
+            SetTela();
 
             if (parTBESTADO != null)
             {
@@ -36,11 +38,14 @@ namespace SisTemTec.Formularios.Cadastro.Estado
         {
             try
             {
-                if (new InserirDados().CadastrarEstado(new TBESTADO(IDESTADO,TxbNome.Text, TxbSigla.Text)))
-                 {
+                ManterEstado ObjManterEstado = new ManterEstado();
+
+                if (ObjManterEstado.CadastrarEstado(new TBESTADO(IDESTADO,TxbNome.Text, TxbSigla.Text)))
+                {
                     if(IDESTADO == 0)
                     {
-
+                        TxbNome.Text = "";
+                        TxbSigla.Text = "";
                     }
                     else
                     {
@@ -51,6 +56,11 @@ namespace SisTemTec.Formularios.Cadastro.Estado
                 }
                 else
                 {
+                    if (ObjManterEstado.TemMensagem)
+                    {
+                        Tratamento.MostrarMensagem(ObjManterEstado.Mansegem);
+                    }
+
                     return false;
                 }
             }
@@ -70,6 +80,23 @@ namespace SisTemTec.Formularios.Cadastro.Estado
             {
                 Tratamento.Exception(ex);
                 return false;
+            }
+        }
+
+        private void SetTela()
+        {
+            try
+            {
+                TxbNome.TabIndex = 0;
+                TxbSigla.TabIndex = 1;
+
+                TxbNome.MaxLength = 50;
+                TxbSigla.MaxLength = 2;
+                this.Text = "Cadastro de Estado";
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
             }
         }
     }

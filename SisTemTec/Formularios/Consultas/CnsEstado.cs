@@ -1,5 +1,4 @@
-﻿using SisTemTec.Banco;
-using SisTemTec.Banco.Manter;
+﻿using SisTemTec.Banco.Manter;
 using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Padrao;
 using System;
@@ -10,24 +9,24 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SisTemTec.Formularios.Cadastro.Estado
+namespace SisTemTec.Formularios.Consultas
 {
-    public partial class FrmEstado : FrmPadraoGerenciar
+    public partial class CnsEstado : FrmCnsPadrao
     {
-        DataTable DadosGrid;
+        private DataTable _DadosGrid;
+        public string Nome { get; set; }
+        public int ID { get; set; }
 
-        public FrmEstado()
+        public CnsEstado()
         {
             InitializeComponent();
-            LoadDados();
             SetTela();
         }
-
         protected override void LoadDados()
         {
             try
             {
-                DadosGrid = new ManterEstado().GetEstados(TxbNome.Text, TxbSigla.Text);
+                _DadosGrid = new ManterEstado().GetEstados(TxbNome.Text, TxbSigla.Text);
                 AjustarGrid();
             }
             catch (Exception ex)
@@ -44,55 +43,39 @@ namespace SisTemTec.Formularios.Cadastro.Estado
                 objFormatarGridView.AdicionaColuna(new FormatarColunas("Sigla", "NMSIGLA", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.None));
                 objFormatarGridView.AdicionaColuna(new FormatarColunas("ID", "IDESTADO", false));
 
-                objFormatarGridView.Finalizar(DadosGrid);
+                objFormatarGridView.Finalizar(_DadosGrid);
             }
             catch (Exception ex)
             {
                 Tratamento.Exception(ex);
             }
         }
-        protected override void Novo()
-        {
-            try
-            {
-                new FrmCadEstado(null).ShowDialog();
-                LoadDados();
-            }
-            catch (Exception ex)
-            {
-                Tratamento.Exception(ex);
-            }
-        }
-        protected override void Editar()
+
+        protected override void Selecionar()
         {
             try
             {
                 if (DgvDados.CurrentRow != null)
                 {
-                    new FrmCadEstado(new ManterEstado().GetEstadoById(Convert.ToInt32(DgvDados.CurrentRow.Cells["IDESTADO"].Value))).ShowDialog();
+                    Nome = Convert.ToString(DgvDados.CurrentRow.Cells["NMESTADO"].Value);
+                    ID = Convert.ToInt32(DgvDados.CurrentRow.Cells["IDESTADO"].Value);
+
+                    this.Close();                    
                 }
-                LoadDados();
             }
             catch (Exception ex)
             {
                 Tratamento.Exception(ex);
             }
         }
+
         private void SetTela()
         {
-            try
-            {
-                TxbNome.TabIndex = 0;
-                TxbSigla.TabIndex = 1;
+            TxbNome.TabIndex = 0;
+            TxbSigla.TabIndex = 0;
 
-                TxbNome.MaxLength = 50;
-                TxbSigla.MaxLength = 2;
-                this.Text = "Gerenciar Cadastro de Estado";
-            }
-            catch (Exception ex)
-            {
-                Tratamento.Exception(ex);
-            }
+            TxbNome.MaxLength = 50;
+            TxbSigla.MaxLength = 2;
         }
     }
 }

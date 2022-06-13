@@ -1,6 +1,4 @@
 ﻿using SisTemTec.Core.Classes;
-using SisTemTec.Formularios.Cadastro.Estado;
-using SisTemTec.Formularios.Consultas;
 using SisTemTec.Formularios.Padrao;
 using System;
 using System.Collections.Generic;
@@ -10,14 +8,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SisTemTec.Formularios.Cadastro.Cidade
+namespace SisTemTec.Formularios.Cadastro.Cliente
 {
-    public partial class FrmCidade : FrmPadraoGerenciar
+    public partial class FrmCliente : FrmPadraoGerenciar
     {
-        private int IDEstado;
         private DataTable DadosGrid;
 
-        public FrmCidade()
+        public FrmCliente()
         {
             InitializeComponent();
             LoadDados();
@@ -41,7 +38,7 @@ namespace SisTemTec.Formularios.Cadastro.Cidade
             try
             {
                 FormatarGridView objFormatarGridView = new FormatarGridView(DgvDados);
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("Cidade", "NMESTADO", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("Estado", "NMESTADO", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
                 objFormatarGridView.AdicionaColuna(new FormatarColunas("Sigla", "NMSIGLA", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.None));
                 objFormatarGridView.AdicionaColuna(new FormatarColunas("ID", "IDESTADO", false));
 
@@ -56,7 +53,7 @@ namespace SisTemTec.Formularios.Cadastro.Cidade
         {
             try
             {
-                new FrmCadEstado(null).ShowDialog();
+                //new FrmCadEstado(null).ShowDialog();
                 LoadDados();
             }
             catch (Exception ex)
@@ -83,41 +80,10 @@ namespace SisTemTec.Formularios.Cadastro.Cidade
         {
             try
             {
-                TbxEstado.TabIndex = 0;
-                TxbCidade.TabIndex = 1;
+                TxbNome.TabIndex = 0;
 
-                TbxEstado.MaxLength = 50;
-                TxbCidade.MaxLength = 2;
-                this.Text = "Gerenciar Cadastro de Cidade";
-            }
-            catch (Exception ex)
-            {
-                Tratamento.Exception(ex);
-            }
-        }
-
-        private void BtnConsultaEstado_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (CnsEstado Consulta = new CnsEstado())
-                {
-                    Consulta.ShowDialog();
-                    TbxEstado.Text = Consulta.Nome;
-                    IDEstado = Consulta.ID;
-                }
-            }
-            catch (Exception ex)
-            {
-                Tratamento.Exception(ex);
-            }
-        }
-        private void BtnLimparEstado_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                TbxEstado.Text = "";
-                IDEstado = 0;
+                TxbNome.MaxLength = 50;
+                this.Text = "Gerenciar Cadastro de Cliente";
             }
             catch (Exception ex)
             {

@@ -101,7 +101,7 @@ namespace SisTemTec.Formularios.Padrao
 
         protected System.Windows.Forms.Panel PnlBotoes;
         protected internal System.Windows.Forms.Button BtnSalvar;
-        protected internal System.Windows.Forms.Button BtnCancelar;
         protected System.Windows.Forms.Panel PnlGrid;
+        protected System.Windows.Forms.Button BtnCancelar;
     }
 }

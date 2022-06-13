@@ -8,6 +8,12 @@
     <Compile Update="Formularios\Cadastro\Cidade\FrmCidade.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Cadastro\Cliente\FrmCadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Cadastro\Cliente\FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Cadastro\Estado\FrmCadEstado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -15,6 +21,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Cadastro\FrmOrdemServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Consultas\CnsCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Consultas\CnsEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Padrao\FrmCnsPadrao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Padrao\FrmPadraoCadastro.cs">
