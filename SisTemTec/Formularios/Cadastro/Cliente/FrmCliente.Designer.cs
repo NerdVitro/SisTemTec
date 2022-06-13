@@ -36,22 +36,13 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PnlBotoes
-            // 
-            this.PnlBotoes.Size = new System.Drawing.Size(122, 450);
-            // 
             // PnlFiltros
             // 
             this.PnlFiltros.Controls.Add(this.label1);
             this.PnlFiltros.Controls.Add(this.TxbNome);
-            this.PnlFiltros.Size = new System.Drawing.Size(678, 117);
             this.PnlFiltros.Controls.SetChildIndex(this.panel1, 0);
             this.PnlFiltros.Controls.SetChildIndex(this.TxbNome, 0);
             this.PnlFiltros.Controls.SetChildIndex(this.label1, 0);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(521, 0);
             // 
             // label1
             // 
@@ -75,7 +66,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(898, 543);
             this.Name = "FrmCliente";
             this.Text = "FrmCliente";
             this.PnlBotoes.ResumeLayout(false);

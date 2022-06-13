@@ -1,6 +1,7 @@
 ﻿using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Cadastro;
 using SisTemTec.Formularios.Cadastro.Cidade;
+using SisTemTec.Formularios.Cadastro.Cliente;
 using SisTemTec.Formularios.Cadastro.Estado;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace SisTemTec
         {
             try
             {
-                LblClock.Text = DateTime.Now.ToString("HH:mm:ss");
+                //LblClock.Text = DateTime.Now.ToString("HH:mm:ss");
             }
             catch (Exception ex)
             {
@@ -106,13 +107,25 @@ namespace SisTemTec
                 Tratamento.Exception(ex);
             }
         }
-
         private void BtnCadastroCidade_Click(object sender, EventArgs e)
         {
             try
             {
                 OcultarMenus();
                 new FrmCidade().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+
+        private void BtnCadastroCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OcultarMenus();
+                new FrmCliente().ShowDialog();
             }
             catch (Exception ex)
             {

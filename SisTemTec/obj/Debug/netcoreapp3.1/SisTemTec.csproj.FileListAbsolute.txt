@@ -49,3 +49,6 @@ C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisT
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Consultas.CnsCidade.resources
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Padrao.FrmCnsPadrao.resources
 C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Consultas.CnsEstado.resources
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Cliente.FrmCadCliente.resources
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Cliente.FrmCliente.resources
+C:\Users\vitro\Documents\GitHub\SisTemTec\SisTemTec\obj\Debug\netcoreapp3.1\SisTemTec.Formularios.Cadastro.Endereco.CadEndereco.resources

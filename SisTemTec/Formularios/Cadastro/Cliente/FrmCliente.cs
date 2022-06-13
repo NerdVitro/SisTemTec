@@ -53,7 +53,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
         {
             try
             {
-                //new FrmCadEstado(null).ShowDialog();
+                new FrmCadCliente(null).ShowDialog();
                 LoadDados();
             }
             catch (Exception ex)

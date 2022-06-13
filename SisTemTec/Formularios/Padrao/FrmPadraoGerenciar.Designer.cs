@@ -165,6 +165,7 @@ namespace SisTemTec.Formularios.Padrao
             this.ClientSize = new System.Drawing.Size(898, 543);
             this.Controls.Add(this.PnlGrid);
             this.Controls.Add(this.PnlBotoes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPadraoGerenciar";

@@ -123,7 +123,7 @@ namespace SisTemTec
             this.LblClock.Name = "LblClock";
             this.LblClock.Size = new System.Drawing.Size(363, 110);
             this.LblClock.TabIndex = 1;
-            this.LblClock.Text = "00:00:00";
+            this.LblClock.Text = "";
             // 
             // PnlCadastros
             // 
@@ -183,6 +183,7 @@ namespace SisTemTec
             this.BtnCadastroCliente.TabIndex = 9;
             this.BtnCadastroCliente.Text = "Cliente";
             this.BtnCadastroCliente.UseVisualStyleBackColor = false;
+            this.BtnCadastroCliente.Click += new System.EventHandler(this.BtnCadastroCliente_Click);
             // 
             // BtnCadastroTecnico
             // 
