@@ -1,4 +1,5 @@
-﻿using SisTemTec.Core.Classes;
+﻿using SisTemTec.Banco.Manter;
+using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Padrao;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
         {
             try
             {
-                //DadosGrid = new ManterEstado().GetEstados(TxbNome.Text, TxbSigla.Text);
+                DadosGrid = new ManterCliente().GetCliente(TxbNome.Text);
                 AjustarGrid();
             }
             catch (Exception ex)
@@ -38,9 +39,11 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             try
             {
                 FormatarGridView objFormatarGridView = new FormatarGridView(DgvDados);
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("Estado", "NMESTADO", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("Sigla", "NMSIGLA", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.None));
-                objFormatarGridView.AdicionaColuna(new FormatarColunas("ID", "IDESTADO", false));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("Nome", "NMNOME", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("Telefone", "NRTELEFONE", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.None));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("Cidade", "NMCIDADE", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("Bairro", "NMBAIRRO", 200, DataGridViewContentAlignment.MiddleLeft, true, DataGridViewAutoSizeColumnMode.Fill));
+                objFormatarGridView.AdicionaColuna(new FormatarColunas("ID", "IDCLIENTE", false));
 
                 objFormatarGridView.Finalizar(DadosGrid);
             }
@@ -67,7 +70,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             {
                 if (DgvDados.CurrentRow != null)
                 {
-                    //new FrmCadEstado(new ManterEstado().GetEstadoById(Convert.ToInt32(DgvDados.CurrentRow.Cells["IDESTADO"].Value))).ShowDialog();
+                    new FrmCadCliente(new ManterCliente().GetClienteById(Convert.ToInt32(DgvDados.CurrentRow.Cells["IDCLIENTE"].Value))).ShowDialog();
                 }
                 LoadDados();
             }

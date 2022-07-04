@@ -32,13 +32,13 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             this.label1 = new System.Windows.Forms.Label();
             this.TxbNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxbNomeRazao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MskCpfCnpj = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.MskTxbNumero = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxbEmail = new System.Windows.Forms.TextBox();
             this.CkbJuridica = new System.Windows.Forms.CheckBox();
             this.CkbFisica = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,10 +49,6 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             this.PnlGrid.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PnlBotoes
-            // 
-            this.PnlBotoes.Size = new System.Drawing.Size(123, 450);
-            // 
             // PnlGrid
             // 
             this.PnlGrid.Controls.Add(this.BtnLimparEstado);
@@ -62,20 +58,15 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             this.PnlGrid.Controls.Add(this.CkbFisica);
             this.PnlGrid.Controls.Add(this.CkbJuridica);
             this.PnlGrid.Controls.Add(this.label5);
-            this.PnlGrid.Controls.Add(this.textBox2);
-            this.PnlGrid.Controls.Add(this.maskedTextBox2);
+            this.PnlGrid.Controls.Add(this.TxbEmail);
+            this.PnlGrid.Controls.Add(this.MskTxbNumero);
             this.PnlGrid.Controls.Add(this.label4);
             this.PnlGrid.Controls.Add(this.MskCpfCnpj);
             this.PnlGrid.Controls.Add(this.label3);
             this.PnlGrid.Controls.Add(this.label2);
-            this.PnlGrid.Controls.Add(this.textBox1);
+            this.PnlGrid.Controls.Add(this.TxbNomeRazao);
             this.PnlGrid.Controls.Add(this.label1);
             this.PnlGrid.Controls.Add(this.TxbNome);
-            this.PnlGrid.Size = new System.Drawing.Size(677, 450);
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.Location = new System.Drawing.Point(7, 289);
             // 
             // label1
             // 
@@ -93,31 +84,31 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             this.TxbNome.Location = new System.Drawing.Point(21, 40);
             this.TxbNome.Name = "TxbNome";
             this.TxbNome.Size = new System.Drawing.Size(619, 29);
-            this.TxbNome.TabIndex = 7;
+            this.TxbNome.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(21, 72);
+            this.label2.Location = new System.Drawing.Point(23, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 10;
             this.label2.Text = "Nome Razão";
             // 
-            // textBox1
+            // TxbNomeRazao
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(21, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(619, 29);
-            this.textBox1.TabIndex = 9;
+            this.TxbNomeRazao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbNomeRazao.Location = new System.Drawing.Point(23, 193);
+            this.TxbNomeRazao.Name = "TxbNomeRazao";
+            this.TxbNomeRazao.Size = new System.Drawing.Size(619, 29);
+            this.TxbNomeRazao.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(183, 176);
+            this.label3.Location = new System.Drawing.Point(181, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 21);
             this.label3.TabIndex = 12;
@@ -126,26 +117,26 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // MskCpfCnpj
             // 
             this.MskCpfCnpj.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MskCpfCnpj.Location = new System.Drawing.Point(183, 193);
+            this.MskCpfCnpj.Location = new System.Drawing.Point(186, 141);
             this.MskCpfCnpj.Mask = "000\\.000\\.000\\-00";
             this.MskCpfCnpj.Name = "MskCpfCnpj";
             this.MskCpfCnpj.Size = new System.Drawing.Size(214, 29);
-            this.MskCpfCnpj.TabIndex = 13;
+            this.MskCpfCnpj.TabIndex = 2;
             // 
-            // maskedTextBox2
+            // MskTxbNumero
             // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBox2.Location = new System.Drawing.Point(21, 247);
-            this.maskedTextBox2.Mask = "(99) 00000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(214, 29);
-            this.maskedTextBox2.TabIndex = 15;
+            this.MskTxbNumero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MskTxbNumero.Location = new System.Drawing.Point(23, 246);
+            this.MskTxbNumero.Mask = "(99) 00000-0000";
+            this.MskTxbNumero.Name = "MskTxbNumero";
+            this.MskTxbNumero.Size = new System.Drawing.Size(214, 29);
+            this.MskTxbNumero.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(21, 230);
+            this.label4.Location = new System.Drawing.Point(22, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 14;
@@ -155,25 +146,25 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(21, 124);
+            this.label5.Location = new System.Drawing.Point(21, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 21);
             this.label5.TabIndex = 17;
             this.label5.Text = "Email";
             // 
-            // textBox2
+            // TxbEmail
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(21, 144);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(619, 29);
-            this.textBox2.TabIndex = 16;
+            this.TxbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbEmail.Location = new System.Drawing.Point(21, 92);
+            this.TxbEmail.Name = "TxbEmail";
+            this.TxbEmail.Size = new System.Drawing.Size(619, 29);
+            this.TxbEmail.TabIndex = 1;
             // 
             // CkbJuridica
             // 
             this.CkbJuridica.AutoSize = true;
             this.CkbJuridica.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CkbJuridica.Location = new System.Drawing.Point(22, 193);
+            this.CkbJuridica.Location = new System.Drawing.Point(25, 141);
             this.CkbJuridica.Name = "CkbJuridica";
             this.CkbJuridica.Size = new System.Drawing.Size(82, 25);
             this.CkbJuridica.TabIndex = 18;
@@ -185,7 +176,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // 
             this.CkbFisica.AutoSize = true;
             this.CkbFisica.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CkbFisica.Location = new System.Drawing.Point(110, 193);
+            this.CkbFisica.Location = new System.Drawing.Point(113, 141);
             this.CkbFisica.Name = "CkbFisica";
             this.CkbFisica.Size = new System.Drawing.Size(67, 25);
             this.CkbFisica.TabIndex = 19;
@@ -197,7 +188,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(22, 288);
+            this.label6.Location = new System.Drawing.Point(23, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 21);
             this.label6.TabIndex = 21;
@@ -207,7 +198,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // 
             this.TxbEndereco.Enabled = false;
             this.TxbEndereco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxbEndereco.Location = new System.Drawing.Point(22, 308);
+            this.TxbEndereco.Location = new System.Drawing.Point(23, 298);
             this.TxbEndereco.Name = "TxbEndereco";
             this.TxbEndereco.Size = new System.Drawing.Size(485, 29);
             this.TxbEndereco.TabIndex = 20;
@@ -215,20 +206,21 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // BtnLimparEstado
             // 
             this.BtnLimparEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnLimparEstado.Location = new System.Drawing.Point(610, 307);
+            this.BtnLimparEstado.Location = new System.Drawing.Point(611, 297);
             this.BtnLimparEstado.Name = "BtnLimparEstado";
             this.BtnLimparEstado.Size = new System.Drawing.Size(30, 29);
-            this.BtnLimparEstado.TabIndex = 23;
+            this.BtnLimparEstado.TabIndex = 9;
             this.BtnLimparEstado.Text = "X";
             this.BtnLimparEstado.UseVisualStyleBackColor = true;
+            this.BtnLimparEstado.Click += new System.EventHandler(this.BtnLimparEstado_Click);
             // 
             // BtnConsultaEstado
             // 
             this.BtnConsultaEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnConsultaEstado.Location = new System.Drawing.Point(513, 307);
+            this.BtnConsultaEstado.Location = new System.Drawing.Point(514, 298);
             this.BtnConsultaEstado.Name = "BtnConsultaEstado";
             this.BtnConsultaEstado.Size = new System.Drawing.Size(91, 29);
-            this.BtnConsultaEstado.TabIndex = 22;
+            this.BtnConsultaEstado.TabIndex = 5;
             this.BtnConsultaEstado.Text = "Cadastrar";
             this.BtnConsultaEstado.UseVisualStyleBackColor = true;
             this.BtnConsultaEstado.Click += new System.EventHandler(this.BtnConsultaEstado_Click);
@@ -237,7 +229,7 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 535);
             this.Name = "FrmCadCliente";
             this.Text = "FrmCadCliente";
             this.PnlBotoes.ResumeLayout(false);
@@ -252,15 +244,15 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxbNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxbNomeRazao;
         private System.Windows.Forms.MaskedTextBox MskCpfCnpj;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox MskTxbNumero;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox CkbFisica;
         private System.Windows.Forms.CheckBox CkbJuridica;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxbEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxbEndereco;
         private System.Windows.Forms.Button BtnLimparEstado;

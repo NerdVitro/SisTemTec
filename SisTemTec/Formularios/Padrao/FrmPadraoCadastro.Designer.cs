@@ -33,14 +33,16 @@ namespace SisTemTec.Formularios.Padrao
             this.BtnSalvar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.PnlGrid = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.PnlBotoes.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlBotoes
             // 
             this.PnlBotoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PnlBotoes.Controls.Add(this.panel1);
             this.PnlBotoes.Controls.Add(this.BtnSalvar);
-            this.PnlBotoes.Controls.Add(this.BtnCancelar);
             this.PnlBotoes.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlBotoes.Location = new System.Drawing.Point(0, 0);
             this.PnlBotoes.Name = "PnlBotoes";
@@ -56,6 +58,7 @@ namespace SisTemTec.Formularios.Padrao
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(110, 64);
             this.BtnSalvar.TabIndex = 1;
+            this.BtnSalvar.TabStop = false;
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = false;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
@@ -66,10 +69,11 @@ namespace SisTemTec.Formularios.Padrao
             this.BtnCancelar.BackColor = System.Drawing.Color.Silver;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCancelar.Location = new System.Drawing.Point(7, 465);
+            this.BtnCancelar.Location = new System.Drawing.Point(7, 12);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(110, 64);
             this.BtnCancelar.TabIndex = 0;
+            this.BtnCancelar.TabStop = false;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -82,6 +86,15 @@ namespace SisTemTec.Formularios.Padrao
             this.PnlGrid.Size = new System.Drawing.Size(761, 535);
             this.PnlGrid.TabIndex = 6;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.BtnCancelar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 447);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(123, 88);
+            this.panel1.TabIndex = 0;
+            // 
             // FrmPadraoCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -93,6 +106,7 @@ namespace SisTemTec.Formularios.Padrao
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPadraoCadastro";
             this.PnlBotoes.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,5 +117,6 @@ namespace SisTemTec.Formularios.Padrao
         protected internal System.Windows.Forms.Button BtnSalvar;
         protected System.Windows.Forms.Panel PnlGrid;
         protected System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

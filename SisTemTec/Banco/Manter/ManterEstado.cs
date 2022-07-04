@@ -166,7 +166,7 @@ namespace SisTemTec.Banco.Manter
             sqldr = null;
             try
             {
-                DataTable Dados = new DataTable();
+                DataTable Dados = null;
 
                 sqlcmd.CommandText =
                      @" SELECT EST.IDESTADO 
@@ -200,6 +200,7 @@ namespace SisTemTec.Banco.Manter
 
                 if (sqldr.HasRows)
                 {
+                    Dados = new DataTable();
                     Dados.Columns.Clear();
                     Dados.Columns.Add("IDESTADO", typeof(int));
                     Dados.Columns.Add("NMESTADO", typeof(string));

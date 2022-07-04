@@ -16,7 +16,7 @@ namespace SisTemTec.Formularios.Cadastro.Endereco
         private int _IDEstado;
         public int IDENDERECO { get; set; }
         public string NOMEENDERECO { get; set; }
-        bool Fechando;
+        bool Fechando = false;
 
         public CadEndereco()
         {
@@ -26,7 +26,7 @@ namespace SisTemTec.Formularios.Cadastro.Endereco
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
             // Cadastrar e fechar retornando endereço cadastrado
-            IDENDERECO = new ManterEnderecoFast().CadastrarEndereco(_IDEstado, TxbCidade.Text, TxbBairro.Text,Convert.ToInt32(MskNumero.Text),TxbRua.Text,TxbComplemento.Text);
+            IDENDERECO = new ManterEnderecoFast().CadastrarEndereco(_IDEstado, TxbCidade.Text.Replace(" ",""), TxbBairro.Text.Replace(" ", ""), Convert.ToInt32(MskNumero.Text),TxbRua.Text,TxbComplemento.Text);
             NOMEENDERECO = TxbCidade.Text + " " + TxbBairro.Text + " " + MskNumero.Text;
             Fechando = true;
             this.Close();
