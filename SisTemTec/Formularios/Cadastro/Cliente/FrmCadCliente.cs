@@ -27,26 +27,28 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
 
             if(parClienteBO != null)
             {
+                _ObjClienteBO = parClienteBO;
                 IDCLIENTE = parClienteBO.IDCLIENTE;
                 TxbNome.Text = parClienteBO.NMNOME;
                 TxbEmail.Text = parClienteBO.NMEMAIL;
-                MskCpfCnpj.Text = parClienteBO.NRCPFCNPJ.ToString();
                 TxbNomeRazao.Text = parClienteBO.NMNOMERAZAO;
                 MskTxbNumero.Text = parClienteBO.NRTELEFONE.ToString();
                 TxbEndereco.Text = parClienteBO.NMENDERECO;
                 _IDENDERECO = parClienteBO.IDENDERECO;
 
-                if (MskCpfCnpj.Text.Length == 14)
+                if (parClienteBO.NRCPFCNPJ.ToString().Length == 11)
                 {
                     CkbJuridica.Checked = false;
                     CkbFisica.Checked = true;
                     MskCpfCnpj.Mask = @"000\.000\.000\-00"; 
+                    MskCpfCnpj.Text = parClienteBO.NRCPFCNPJ.ToString();
                 }
                 else
                 {
                     CkbJuridica.Checked = true;
                     CkbFisica.Checked = false;
                     MskCpfCnpj.Mask = @"00\.000\.000\/0000\-00";
+                    MskCpfCnpj.Text = parClienteBO.NRCPFCNPJ.ToString();
                 }
             }
             else
@@ -107,8 +109,52 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
         {
             try
             {
+                bool alterado = false;
+                if (IDCLIENTE == 0)
+                {
+                    if (CkbJuridica.Checked && MskCpfCnpj.Text != "  .   .   /    -")
+                    {
+                        alterado = true;
+                    }
+                    else if (CkbFisica.Checked && MskCpfCnpj.Text != "   .   .   -")
+                    {
+                        alterado = true;
+                    }
 
+                    if (TxbNome.Text == "" ||
+                        TxbEmail.Text == "" ||
+                        TxbNomeRazao.Text == "" ||
+                        MskTxbNumero.Text == "(  )      -" ||
+                        TxbEndereco.Text == "")
+                    {
+                        alterado = true;
+                    }
+                }
+                else
+                {
+                    if (TxbNome.Text == _ObjClienteBO.NMNOME ||
+                        TxbEmail.Text == _ObjClienteBO.NMEMAIL ||
+                        TxbNomeRazao.Text == _ObjClienteBO.NMNOMERAZAO ||
+                        MskTxbNumero.Text.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "") == _ObjClienteBO.NRTELEFONE.ToString() ||
+                        MskCpfCnpj.Text.Replace("-", "").Replace(".", "").Replace("/", "") == _ObjClienteBO.NRCPFCNPJ.ToString() ||
+                        TxbEndereco.Text == _ObjClienteBO.NMENDERECO)
+                    {
+                        alterado = true;
+                    }
+                }
 
+                if (alterado)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Deseja descartar alterações feitas?", "Atenção", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        return true;
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        return false;
+                    }
+                }
 
                 return true;
             }
@@ -144,6 +190,19 @@ namespace SisTemTec.Formularios.Cadastro.Cliente
         {
             try
             {
+                if(MskTxbNumero.Text == "(  )      -")
+                {
+                    throw new Exception("Número é obrigatório.");
+                }
+                if (CkbJuridica.Checked && MskCpfCnpj.Text != "  .   .   /    -")
+                {
+                    throw new Exception("CPF/CNPJ é obrigatório.");
+                }
+                else if (CkbFisica.Checked && MskCpfCnpj.Text != "   .   .   -")
+                {
+                    throw new Exception("CPF/CNPJ é obrigatório.");
+                }
+
                 _ObjClienteBO = new ClienteBO
                     (
                         IDCLIENTE,
