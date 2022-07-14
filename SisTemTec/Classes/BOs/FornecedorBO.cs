@@ -7,7 +7,7 @@ namespace SisTemTec.Classes.BOs
     public class FornecedorBO
     {
         private int _IDFORNECEDOR;
-        private Int64 _NRCPFCNPJ;
+        private Int64 _NRCNPJ;
         private string _NMNOME;
         private string _NMNOMERAZAO;
         private Int64 _NRTELEFONE;
@@ -18,7 +18,7 @@ namespace SisTemTec.Classes.BOs
         public FornecedorBO(int iDFORNECEDOR, long nRCPFCNPJ, string nMNOME, string nMNOMERAZAO, long nRTELEFONE, string nMEMAIL, int iDENDERECO, string nMENDERECO)
         {
             _IDFORNECEDOR = iDFORNECEDOR;
-            _NRCPFCNPJ = nRCPFCNPJ;
+            _NRCNPJ = nRCPFCNPJ;
             _NMNOME = nMNOME;
             _NMNOMERAZAO = nMNOMERAZAO;
             _NRTELEFONE = nRTELEFONE;
@@ -33,7 +33,7 @@ namespace SisTemTec.Classes.BOs
         }
 
         public int IDFORNECEDOR { get => _IDFORNECEDOR; set => _IDFORNECEDOR = value; }
-        public long NRCPFCNPJ { get => _NRCPFCNPJ; set => _NRCPFCNPJ = value; }
+        public long NRCNPJ { get => _NRCNPJ; set => _NRCNPJ = value; }
         public string NMNOME { get => _NMNOME; set => _NMNOME = value; }
         public string NMNOMERAZAO { get => _NMNOMERAZAO; set => _NMNOMERAZAO = value; }
         public long NRTELEFONE { get => _NRTELEFONE; set => _NRTELEFONE = value; }

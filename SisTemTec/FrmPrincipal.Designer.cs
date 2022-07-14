@@ -121,9 +121,8 @@ namespace SisTemTec
             this.LblClock.Font = new System.Drawing.Font("Arial Narrow", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblClock.Location = new System.Drawing.Point(850, 67);
             this.LblClock.Name = "LblClock";
-            this.LblClock.Size = new System.Drawing.Size(363, 110);
+            this.LblClock.Size = new System.Drawing.Size(0, 110);
             this.LblClock.TabIndex = 1;
-            this.LblClock.Text = "";
             // 
             // PnlCadastros
             // 
@@ -170,6 +169,7 @@ namespace SisTemTec
             this.BtnCadastroFornecedor.TabIndex = 10;
             this.BtnCadastroFornecedor.Text = "Fornecedor";
             this.BtnCadastroFornecedor.UseVisualStyleBackColor = false;
+            this.BtnCadastroFornecedor.Click += new System.EventHandler(this.BtnCadastroFornecedor_Click);
             // 
             // BtnCadastroCliente
             // 

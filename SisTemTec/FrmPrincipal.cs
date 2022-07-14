@@ -3,6 +3,7 @@ using SisTemTec.Formularios.Cadastro;
 using SisTemTec.Formularios.Cadastro.Cidade;
 using SisTemTec.Formularios.Cadastro.Cliente;
 using SisTemTec.Formularios.Cadastro.Estado;
+using SisTemTec.Formularios.Cadastro.Fornecedor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,6 +127,18 @@ namespace SisTemTec
             {
                 OcultarMenus();
                 new FrmCliente().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Tratamento.Exception(ex);
+            }
+        }
+        private void BtnCadastroFornecedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OcultarMenus();
+                new FrmFornecedor().ShowDialog();
             }
             catch (Exception ex)
             {

@@ -29,7 +29,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
                 _IDFORNECEDOR = parFornecedorBO.IDFORNECEDOR;
                 TxbNome.Text = parFornecedorBO.NMNOME;
                 TxbEmail.Text = parFornecedorBO.NMEMAIL;
-                MskCpfCnpj.Text = parFornecedorBO.NRCPFCNPJ.ToString();
+                MskCpfCnpj.Text = parFornecedorBO.NRCNPJ.ToString();
                 TxbNomeRazao.Text = parFornecedorBO.NMNOMERAZAO;
                 MskTxbNumero.Text = parFornecedorBO.NRTELEFONE.ToString();
                 TxbEndereco.Text = parFornecedorBO.NMENDERECO;
@@ -106,7 +106,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
                         TxbEmail.Text == _ObjFornecedorBO.NMEMAIL ||
                         TxbNomeRazao.Text == _ObjFornecedorBO.NMNOMERAZAO ||
                         MskTxbNumero.Text.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "") == _ObjFornecedorBO.NRTELEFONE.ToString() ||
-                        MskCpfCnpj.Text.Replace("-", "").Replace(".", "").Replace("/", "") == _ObjFornecedorBO.NRCPFCNPJ.ToString() ||
+                        MskCpfCnpj.Text.Replace("-", "").Replace(".", "").Replace("/", "") == _ObjFornecedorBO.NRCNPJ.ToString() ||
                         TxbEndereco.Text == _ObjFornecedorBO.NMENDERECO)
                     {
                         alterado = true;
@@ -147,7 +147,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
 
                 BtnLimparEstado.TabStop = false;
                 TxbNomeRazao.TabStop = false;
-                this.Text = "Cadastro de Cliente";
+                this.Text = "Cadastro de Fornecedor";
             }
             catch (Exception ex)
             {
@@ -162,7 +162,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
                 {
                     throw new Exception("Número é obrigatório");
                 }
-                if (MskCpfCnpj.Text != "  .   .   /    -")
+                if (MskCpfCnpj.Text == "  .   .   /    -")
                 {
                     throw new Exception("CNPJ é obrigatório.");
                 }

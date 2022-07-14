@@ -67,7 +67,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // BtnLimparEstado
             // 
             this.BtnLimparEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnLimparEstado.Location = new System.Drawing.Point(608, 297);
+            this.BtnLimparEstado.Location = new System.Drawing.Point(607, 262);
             this.BtnLimparEstado.Name = "BtnLimparEstado";
             this.BtnLimparEstado.Size = new System.Drawing.Size(30, 29);
             this.BtnLimparEstado.TabIndex = 29;
@@ -78,7 +78,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // BtnConsultaEstado
             // 
             this.BtnConsultaEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnConsultaEstado.Location = new System.Drawing.Point(511, 298);
+            this.BtnConsultaEstado.Location = new System.Drawing.Point(510, 263);
             this.BtnConsultaEstado.Name = "BtnConsultaEstado";
             this.BtnConsultaEstado.Size = new System.Drawing.Size(91, 29);
             this.BtnConsultaEstado.TabIndex = 27;
@@ -90,7 +90,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(20, 278);
+            this.label6.Location = new System.Drawing.Point(19, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 21);
             this.label6.TabIndex = 37;
@@ -100,7 +100,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // 
             this.TxbEndereco.Enabled = false;
             this.TxbEndereco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxbEndereco.Location = new System.Drawing.Point(20, 298);
+            this.TxbEndereco.Location = new System.Drawing.Point(19, 263);
             this.TxbEndereco.Name = "TxbEndereco";
             this.TxbEndereco.Size = new System.Drawing.Size(485, 29);
             this.TxbEndereco.TabIndex = 36;
@@ -109,7 +109,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(18, 72);
+            this.label5.Location = new System.Drawing.Point(18, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 21);
             this.label5.TabIndex = 33;
@@ -118,7 +118,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // TxbEmail
             // 
             this.TxbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxbEmail.Location = new System.Drawing.Point(18, 92);
+            this.TxbEmail.Location = new System.Drawing.Point(18, 155);
             this.TxbEmail.Name = "TxbEmail";
             this.TxbEmail.Size = new System.Drawing.Size(619, 29);
             this.TxbEmail.TabIndex = 23;
@@ -126,7 +126,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // MskTxbNumero
             // 
             this.MskTxbNumero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MskTxbNumero.Location = new System.Drawing.Point(20, 246);
+            this.MskTxbNumero.Location = new System.Drawing.Point(19, 211);
             this.MskTxbNumero.Mask = "(99) 00000-0000";
             this.MskTxbNumero.Name = "MskTxbNumero";
             this.MskTxbNumero.Size = new System.Drawing.Size(214, 29);
@@ -136,7 +136,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(19, 225);
+            this.label4.Location = new System.Drawing.Point(18, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 32;
@@ -145,7 +145,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // MskCpfCnpj
             // 
             this.MskCpfCnpj.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MskCpfCnpj.Location = new System.Drawing.Point(25, 141);
+            this.MskCpfCnpj.Location = new System.Drawing.Point(279, 211);
             this.MskCpfCnpj.Mask = "00\\.000\\.000\\/0000\\-00";
             this.MskCpfCnpj.Name = "MskCpfCnpj";
             this.MskCpfCnpj.Size = new System.Drawing.Size(214, 29);
@@ -155,17 +155,17 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(20, 124);
+            this.label3.Location = new System.Drawing.Point(279, 190);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 21);
+            this.label3.Size = new System.Drawing.Size(49, 21);
             this.label3.TabIndex = 31;
-            this.label3.Text = "CPF/CNPJ";
+            this.label3.Text = "CNPJ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(20, 173);
+            this.label2.Location = new System.Drawing.Point(18, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 30;
@@ -174,7 +174,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             // TxbNomeRazao
             // 
             this.TxbNomeRazao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxbNomeRazao.Location = new System.Drawing.Point(20, 193);
+            this.TxbNomeRazao.Location = new System.Drawing.Point(18, 92);
             this.TxbNomeRazao.Name = "TxbNomeRazao";
             this.TxbNomeRazao.Size = new System.Drawing.Size(619, 29);
             this.TxbNomeRazao.TabIndex = 25;

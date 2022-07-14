@@ -115,7 +115,7 @@ namespace SisTemTec.Banco.Manter
                     objRetornoCliente = new FornecedorBO
                         (
                             sqldr["IDFORNECEDOR"] == DBNull.Value ? 0 : Convert.ToInt32(sqldr["IDFORNECEDOR"], cultureInfo),
-                            sqldr["NRCPFCNPJ"] == DBNull.Value ? 0 : Convert.ToInt64(sqldr["NRCPFCNPJ"], cultureInfo),
+                            sqldr["NRCNPJ"] == DBNull.Value ? 0 : Convert.ToInt64(sqldr["NRCNPJ"], cultureInfo),
                             sqldr["NMNOME"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMNOME"], cultureInfo),
                             sqldr["NMNOMERAZAO"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMNOMERAZAO"], cultureInfo),
                             sqldr["NRTELEFONE"] == DBNull.Value ? 0 : Convert.ToInt64(sqldr["NRTELEFONE"], cultureInfo),
@@ -156,7 +156,7 @@ namespace SisTemTec.Banco.Manter
                          @" INSERT INTO TBFORNECEDOR
                             (
 	                            IDENDERECO
-	                            ,NRCPFCNPJ
+	                            ,NRCNPJ
 	                            ,NMNOME
 	                            ,NMNOMERAZAO
 	                            ,NRTELEFONE
@@ -164,7 +164,7 @@ namespace SisTemTec.Banco.Manter
                             )VALUES 
                             (
 	                            @IDENDERECO
-	                            ,@NRCPFCNPJ
+	                            ,@NRCNPJ
 	                            ,@NMNOME
 	                            ,@NMNOMERAZAO
 	                            ,@NRTELEFONE
@@ -173,7 +173,7 @@ namespace SisTemTec.Banco.Manter
 
                     sqlcmd.Parameters.Clear();
                     sqlcmd.Parameters.AddWithValue("@IDENDERECO", parFornecedorBO.IDENDERECO);
-                    sqlcmd.Parameters.AddWithValue("@NRCPFCNPJ", parFornecedorBO.NRCPFCNPJ);
+                    sqlcmd.Parameters.AddWithValue("@NRCNPJ", parFornecedorBO.NRCNPJ);
                     sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
                     sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
                     sqlcmd.Parameters.AddWithValue("@NRTELEFONE", parFornecedorBO.NRTELEFONE);
@@ -184,7 +184,7 @@ namespace SisTemTec.Banco.Manter
                     sqlcmd.CommandText =
                          @" UPDATE TBFORNECEDOR SET
                                 IDENDERECO = @IDENDERECO
-                                ,NRCPFCNPJ = @NRCPFCNPJ
+                                ,NRCNPJ = @NRCNPJ
                                 ,NMNOME = @NMNOME
                                 ,NMNOMERAZAO = @NMNOMERAZAO
                                 ,NRTELEFONE = @NRTELEFONE
@@ -193,7 +193,7 @@ namespace SisTemTec.Banco.Manter
 
                     sqlcmd.Parameters.Clear();
                     sqlcmd.Parameters.AddWithValue("@IDENDERECO", parFornecedorBO.IDENDERECO);
-                    sqlcmd.Parameters.AddWithValue("@NRCPFCNPJ", parFornecedorBO.NRCPFCNPJ);
+                    sqlcmd.Parameters.AddWithValue("@NRCNPJ", parFornecedorBO.NRCNPJ);
                     sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
                     sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
                     sqlcmd.Parameters.AddWithValue("@NRTELEFONE", parFornecedorBO.NRTELEFONE);
@@ -334,34 +334,6 @@ namespace SisTemTec.Banco.Manter
                 conexao.Desconectar();
             }
         }
-        private bool ValidarObrigatorio(FornecedorBO parFornecedorBO)
-        {
-            try
-            {
-                bool retorno = false;
 
-                if (string.IsNullOrEmpty(parFornecedorBO.NMNOME))
-                {
-                    Mansegem += "Nome é Obrigatório";
-                    retorno = true;
-                }
-                if (string.IsNullOrEmpty(parFornecedorBO.NMNOMERAZAO))
-                {
-                    Mansegem += "Nome Razão é Obrigatório";
-                    retorno = true;
-                }
-                if (string.IsNullOrEmpty(parFornecedorBO.NMEMAIL))
-                {
-                    Mansegem += "Email é Obrigatório";
-                    retorno = true;
-                }
-
-                return retorno;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

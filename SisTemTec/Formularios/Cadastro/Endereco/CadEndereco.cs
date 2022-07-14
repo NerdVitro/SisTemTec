@@ -110,7 +110,7 @@ namespace SisTemTec.Formularios.Cadastro.Endereco
             {
                 string mensagem = "";
 
-                if (string.IsNullOrEmpty(TxbEstado.Text) || _IDEstado != 0)
+                if (string.IsNullOrEmpty(TxbEstado.Text) || _IDEstado == 0)
                 {
                     mensagem += "Estado é Obrigatório.\n";
                 }
