@@ -81,7 +81,7 @@ namespace SisTemTec.Banco.Manter
                 conexao.Desconectar();
             }
         }
-        public FornecedorBO GetFornecedorById(int parIDCLIENTE)
+        public FornecedorBO GetFornecedorById(int parIDFORNECEDOR)
         {
             sqldr = null;
             try
@@ -89,24 +89,23 @@ namespace SisTemTec.Banco.Manter
                 FornecedorBO objRetornoCliente = new FornecedorBO();
 
                 sqlcmd.CommandText =
-                     @" SELECT CLI.IDCLIENTE 
-                                ,CLI.IDENDERECO
-                                ,CLI.NRCPFCNPJ
-                                ,CLI.NMNOME
-                                ,CLI.NMNOMERAZAO
-                                ,CLI.NRTELEFONE
-                                ,CLI.NMEMAIL
+                     @" SELECT FORN.IDFORNECEDOR
+		                        ,FORN.NRCNPJ
+		                        ,FORN.NMNOME
+		                        ,FORN.NMNOMERAZAO
+		                        ,FORN.NRTELEFONE
+		                        ,FORN.NMEMAIL
+		                        ,FORN.IDENDERECO
 		                        ,CID.NMCIDADE
 		                        ,BAI.NMBAIRRO
-		                        ,ECO.NRNUMERO
-                        FROM TBCLIENTE AS CLI
-                        INNER JOIN TBENDERECO ECO ON ECO.IDENDERECO = CLI.IDENDERECO
+                        FROM TBFORNECEDOR FORN
+                        INNER JOIN TBENDERECO ECO ON ECO.IDENDERECO = FORN.IDENDERECO
                         INNER JOIN TBBAIRRO BAI ON BAI.IDBAIRRO = ECO.IDBAIRRO
-                        INNER JOIN TBCIDADE CID ON CID.IDCIDADE = BAI.IDCIDADE
-                            WHERE CLI.IDCLIENTE = @IDCLIENTE ";
+                        INNER JOIN TBCIDADE CID ON CID.IDCIDADE = BAI.IDCIDADE 
+                        WHERE FORN.IDFORNECEDOR = @IDFORNECEDOR";
 
                 sqlcmd.Parameters.Clear();
-                sqlcmd.Parameters.AddWithValue("@IDCLIENTE", parIDCLIENTE);
+                sqlcmd.Parameters.AddWithValue("@IDFORNECEDOR", parIDFORNECEDOR);
 
                 sqlcmd.Connection = conexao.Conectar();
                 sqldr = sqlcmd.ExecuteReader();
@@ -115,18 +114,18 @@ namespace SisTemTec.Banco.Manter
                 {
                     objRetornoCliente = new FornecedorBO
                         (
-                            //sqldr["IDCLIENTE"] == DBNull.Value ? 0 : Convert.ToInt32(sqldr["IDCLIENTE"], cultureInfo),
-                            //sqldr["NRCPFCNPJ"] == DBNull.Value ? 0 : Convert.ToInt64(sqldr["NRCPFCNPJ"], cultureInfo),
-                            //sqldr["NMNOME"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMNOME"], cultureInfo),
-                            //sqldr["NMNOMERAZAO"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMNOMERAZAO"], cultureInfo),
-                            //sqldr["NRTELEFONE"] == DBNull.Value ? 0 : Convert.ToInt64(sqldr["NRTELEFONE"], cultureInfo),
-                            //sqldr["NMEMAIL"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMEMAIL"], cultureInfo),
-                            //sqldr["IDENDERECO"] == DBNull.Value ? 0 : Convert.ToInt32(sqldr["IDENDERECO"], cultureInfo),
-                            //(
-                            //    (sqldr["NMCIDADE"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMCIDADE"], cultureInfo)) + " " +
-                            //    (sqldr["NMBAIRRO"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMBAIRRO"], cultureInfo)) + " " +
-                            //    (sqldr["NRNUMERO"] == DBNull.Value ? 0 : Convert.ToInt32(sqldr["NRNUMERO"], cultureInfo))
-                            //)
+                            sqldr["IDFORNECEDOR"] == DBNull.Value ? 0 : Convert.ToInt32(sqldr["IDFORNECEDOR"], cultureInfo),
+                            sqldr["NRCPFCNPJ"] == DBNull.Value ? 0 : Convert.ToInt64(sqldr["NRCPFCNPJ"], cultureInfo),
+                            sqldr["NMNOME"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMNOME"], cultureInfo),
+                            sqldr["NMNOMERAZAO"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMNOMERAZAO"], cultureInfo),
+                            sqldr["NRTELEFONE"] == DBNull.Value ? 0 : Convert.ToInt64(sqldr["NRTELEFONE"], cultureInfo),
+                            sqldr["NMEMAIL"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMEMAIL"], cultureInfo),
+                            sqldr["IDENDERECO"] == DBNull.Value ? 0 : Convert.ToInt32(sqldr["IDENDERECO"], cultureInfo),
+                            (
+                                (sqldr["NMCIDADE"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMCIDADE"], cultureInfo)) + " " +
+                                (sqldr["NMBAIRRO"] == DBNull.Value ? "" : Convert.ToString(sqldr["NMBAIRRO"], cultureInfo)) + " " +
+                                (sqldr["NRNUMERO"] == DBNull.Value ? 0 : Convert.ToInt32(sqldr["NRNUMERO"], cultureInfo))
+                            )
                         );
                 }
                 return objRetornoCliente;
@@ -151,56 +150,56 @@ namespace SisTemTec.Banco.Manter
                     return false;
                 }
 
-                //if (parFornecedorBO.IDCLIENTE == 0)
-                //{
-                //    sqlcmd.CommandText =
-                //         @" INSERT INTO TBCLIENTE
-                //            (
-	               //             IDENDERECO
-	               //             ,NRCPFCNPJ
-	               //             ,NMNOME
-	               //             ,NMNOMERAZAO
-	               //             ,NRTELEFONE
-	               //             ,NMEMAIL
-                //            )VALUES 
-                //            (
-	               //             @IDENDERECO
-	               //             ,@NRCPFCNPJ
-	               //             ,@NMNOME
-	               //             ,@NMNOMERAZAO
-	               //             ,@NRTELEFONE
-	               //             ,@NMEMAIL
-                //            )";
+                if (parFornecedorBO.IDFORNECEDOR == 0)
+                {
+                    sqlcmd.CommandText =
+                         @" INSERT INTO TBFORNECEDOR
+                            (
+	                            IDENDERECO
+	                            ,NRCPFCNPJ
+	                            ,NMNOME
+	                            ,NMNOMERAZAO
+	                            ,NRTELEFONE
+	                            ,NMEMAIL
+                            )VALUES 
+                            (
+	                            @IDENDERECO
+	                            ,@NRCPFCNPJ
+	                            ,@NMNOME
+	                            ,@NMNOMERAZAO
+	                            ,@NRTELEFONE
+	                            ,@NMEMAIL
+                            )";
 
-                //    sqlcmd.Parameters.Clear();
-                //    sqlcmd.Parameters.AddWithValue("@IDENDERECO", parFornecedorBO.IDENDERECO);
-                //    sqlcmd.Parameters.AddWithValue("@NRCPFCNPJ", parFornecedorBO.NRCPFCNPJ);
-                //    sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
-                //    sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
-                //    sqlcmd.Parameters.AddWithValue("@NRTELEFONE", parFornecedorBO.NRTELEFONE);
-                //    sqlcmd.Parameters.AddWithValue("@NMEMAIL", parFornecedorBO.NMEMAIL);
-                //}
-                //else
-                //{
-                //    sqlcmd.CommandText =
-                //         @" UPDATE TBCLIENTE SET
-                //                IDENDERECO = @IDENDERECO
-                //                ,NRCPFCNPJ = @NRCPFCNPJ
-                //                ,NMNOME = @NMNOME
-                //                ,NMNOMERAZAO = @NMNOMERAZAO
-                //                ,NRTELEFONE = @NRTELEFONE
-                //                ,NMEMAIL = @NMEMAIL
-                //            WHERE IDCLIENTE = @IDCLIENTE ";
+                    sqlcmd.Parameters.Clear();
+                    sqlcmd.Parameters.AddWithValue("@IDENDERECO", parFornecedorBO.IDENDERECO);
+                    sqlcmd.Parameters.AddWithValue("@NRCPFCNPJ", parFornecedorBO.NRCPFCNPJ);
+                    sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
+                    sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
+                    sqlcmd.Parameters.AddWithValue("@NRTELEFONE", parFornecedorBO.NRTELEFONE);
+                    sqlcmd.Parameters.AddWithValue("@NMEMAIL", parFornecedorBO.NMEMAIL);
+                }
+                else
+                {
+                    sqlcmd.CommandText =
+                         @" UPDATE TBFORNECEDOR SET
+                                IDENDERECO = @IDENDERECO
+                                ,NRCPFCNPJ = @NRCPFCNPJ
+                                ,NMNOME = @NMNOME
+                                ,NMNOMERAZAO = @NMNOMERAZAO
+                                ,NRTELEFONE = @NRTELEFONE
+                                ,NMEMAIL = @NMEMAIL
+                            WHERE IDFORNECEDOR = @IDFORNECEDOR ";
 
-                //    sqlcmd.Parameters.Clear();
-                //    sqlcmd.Parameters.AddWithValue("@IDENDERECO", parFornecedorBO.IDENDERECO);
-                //    sqlcmd.Parameters.AddWithValue("@NRCPFCNPJ", parFornecedorBO.NRCPFCNPJ);
-                //    sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
-                //    sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
-                //    sqlcmd.Parameters.AddWithValue("@NRTELEFONE", parFornecedorBO.NRTELEFONE);
-                //    sqlcmd.Parameters.AddWithValue("@NMEMAIL", parFornecedorBO.NMEMAIL);
-                //    sqlcmd.Parameters.AddWithValue("@IDCLIENTE", parFornecedorBO.IDCLIENTE);
-                //}
+                    sqlcmd.Parameters.Clear();
+                    sqlcmd.Parameters.AddWithValue("@IDENDERECO", parFornecedorBO.IDENDERECO);
+                    sqlcmd.Parameters.AddWithValue("@NRCPFCNPJ", parFornecedorBO.NRCPFCNPJ);
+                    sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
+                    sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
+                    sqlcmd.Parameters.AddWithValue("@NRTELEFONE", parFornecedorBO.NRTELEFONE);
+                    sqlcmd.Parameters.AddWithValue("@NMEMAIL", parFornecedorBO.NMEMAIL);
+                    sqlcmd.Parameters.AddWithValue("@IDFORNECEDOR", parFornecedorBO.IDFORNECEDOR);
+                }
 
                 sqlcmd.Connection = conexao.Conectar();
                 return sqlcmd.ExecuteNonQuery() > 0;
@@ -219,6 +218,31 @@ namespace SisTemTec.Banco.Manter
         {
             try
             {
+                Mansegem = "";
+                string obrigatorio = " É Obrigatório.\n";
+
+                if (parFornecedorBO.NMNOMERAZAO == "")
+                {
+                    Mansegem = "Nome Razão" + obrigatorio;
+                }
+                if (parFornecedorBO.NMNOME == "")
+                {
+                    Mansegem = "Nome" + obrigatorio;
+                }
+                if (parFornecedorBO.NMEMAIL == "")
+                {
+                    Mansegem = "Email" + obrigatorio;
+                }
+                if (parFornecedorBO.NMENDERECO == "")
+                {
+                    Mansegem = "Endereço" + obrigatorio;
+                }
+
+                if (Mansegem != "")
+                {
+                    return true;
+                }
+
                 if (ValidarNomeFornecedor(parFornecedorBO))
                 {
                     return true;
@@ -248,8 +272,8 @@ namespace SisTemTec.Banco.Manter
                                         WHERE NMNOME = @NMNOME 
                                         AND IDCLIENTE <> @IDCLIENTE ";
                 sqlcmd.Parameters.Clear();
-                //sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
-                //sqlcmd.Parameters.AddWithValue("@IDCLIENTE", parFornecedorBO.IDCLIENTE);
+                sqlcmd.Parameters.AddWithValue("@NMNOME", parFornecedorBO.NMNOME);
+                sqlcmd.Parameters.AddWithValue("@IDCLIENTE", parFornecedorBO.IDFORNECEDOR);
 
                 sqlcmd.Connection = conexao.Conectar();
                 sqldr = sqlcmd.ExecuteReader();
@@ -284,8 +308,8 @@ namespace SisTemTec.Banco.Manter
                                         WHERE NMNOMERAZAO = @NMNOMERAZAO 
                                         AND IDCLIENTE <> @IDCLIENTE ";
                 sqlcmd.Parameters.Clear();
-                //sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
-                //sqlcmd.Parameters.AddWithValue("@IDCLIENTE", parFornecedorBO.IDCLIENTE);
+                sqlcmd.Parameters.AddWithValue("@NMNOMERAZAO", parFornecedorBO.NMNOMERAZAO);
+                sqlcmd.Parameters.AddWithValue("@IDCLIENTE", parFornecedorBO.IDFORNECEDOR);
 
                 sqlcmd.Connection = conexao.Conectar();
                 sqldr = sqlcmd.ExecuteReader();
@@ -308,6 +332,35 @@ namespace SisTemTec.Banco.Manter
             {
                 sqldr?.Close();
                 conexao.Desconectar();
+            }
+        }
+        private bool ValidarObrigatorio(FornecedorBO parFornecedorBO)
+        {
+            try
+            {
+                bool retorno = false;
+
+                if (string.IsNullOrEmpty(parFornecedorBO.NMNOME))
+                {
+                    Mansegem += "Nome é Obrigatório";
+                    retorno = true;
+                }
+                if (string.IsNullOrEmpty(parFornecedorBO.NMNOMERAZAO))
+                {
+                    Mansegem += "Nome Razão é Obrigatório";
+                    retorno = true;
+                }
+                if (string.IsNullOrEmpty(parFornecedorBO.NMEMAIL))
+                {
+                    Mansegem += "Email é Obrigatório";
+                    retorno = true;
+                }
+
+                return retorno;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

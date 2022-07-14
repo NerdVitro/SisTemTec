@@ -1,4 +1,5 @@
-﻿using SisTemTec.Classes.BOs;
+﻿using SisTemTec.Banco.Manter;
+using SisTemTec.Classes.BOs;
 using SisTemTec.Core.Classes;
 using SisTemTec.Formularios.Cadastro.Endereco;
 using SisTemTec.Formularios.Padrao;
@@ -26,14 +27,13 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             {
                 _ObjFornecedorBO = parFornecedorBO;
                 _IDFORNECEDOR = parFornecedorBO.IDFORNECEDOR;
-                //_IDFORNECEDOR = parClienteBO.IDCLIENTE;
-                //TxbNome.Text = parClienteBO.NMNOME;
-                //TxbEmail.Text = parClienteBO.NMEMAIL;
-                //MskCpfCnpj.Text = parClienteBO.NRCPFCNPJ.ToString();
-                //TxbNomeRazao.Text = parClienteBO.NMNOMERAZAO;
-                //MskTxbNumero.Text = parClienteBO.NRTELEFONE.ToString();
-                //TxbEndereco.Text = parClienteBO.NMENDERECO;
-                //_IDENDERECO = parClienteBO.IDENDERECO;
+                TxbNome.Text = parFornecedorBO.NMNOME;
+                TxbEmail.Text = parFornecedorBO.NMEMAIL;
+                MskCpfCnpj.Text = parFornecedorBO.NRCPFCNPJ.ToString();
+                TxbNomeRazao.Text = parFornecedorBO.NMNOMERAZAO;
+                MskTxbNumero.Text = parFornecedorBO.NRTELEFONE.ToString();
+                TxbEndereco.Text = parFornecedorBO.NMENDERECO;
+                _IDENDERECO = parFornecedorBO.IDENDERECO;
 
                 MskCpfCnpj.Mask = @"00\.000\.000\/0000\-00";
             }
@@ -44,40 +44,38 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
         {
             try
             {
-                //ManterCliente ObjManterCliente = new ManterCliente();
+                ManterFornecedor ObjManterFornecedor = new ManterFornecedor();
                 SetObjectSave();
-                //if (ObjManterCliente.SalvarCliente(_ObjClienteBO))
-                //{
-                //    if (IDCLIENTE == 0)
-                //    {
-                //        TxbNome.Text = "";
-                //        TxbEmail.Text = "";
-                //        MskCpfCnpj.Text = "";
-                //        TxbNomeRazao.Text = "";
-                //        MskTxbNumero.Text = "";
-                //        TxbEndereco.Text = "";
-                //        _IDENDERECO = 0;
+                if (ObjManterFornecedor.SalvarFornecedor(_ObjFornecedorBO))
+                {
+                    if (_IDFORNECEDOR == 0)
+                    {
+                        TxbNome.Text = "";
+                        TxbEmail.Text = "";
+                        MskCpfCnpj.Text = "";
+                        TxbNomeRazao.Text = "";
+                        MskTxbNumero.Text = "";
+                        TxbEndereco.Text = "";
+                        _IDENDERECO = 0;
 
-                //        CkbJuridica.Checked = false;
-                //        CkbFisica.Checked = true;
-                //        MskCpfCnpj.Mask = @"000\.000\.000\-00";
-                //    }
-                //    else
-                //    {
-                //        this.Close();
-                //    }
+                        MskCpfCnpj.Mask = @"00\.000\.000\/0000\-00";
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
 
                     return true;
-                //}
-                //else
-                //{
-                //    if (ObjManterCliente.TemMensagem)
-                //    {
-                //        Tratamento.MostrarMensagem(ObjManterCliente.Mansegem);
-                //    }
+                }
+                else
+                {
+                    if (ObjManterFornecedor.TemMensagem)
+                    {
+                        Tratamento.MostrarMensagem(ObjManterFornecedor.Mansegem);
+                    }
 
-                //    return false;
-                //}
+                    return false;
+                }
             }
             catch (Exception ex)
             {
@@ -104,15 +102,15 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
                 }
                 else
                 {
-                    //if (TxbNome.Text == _ObjClienteBO.NMNOME ||
-                    //    TxbEmail.Text == _ObjClienteBO.NMEMAIL ||
-                    //    TxbNomeRazao.Text == _ObjClienteBO.NMNOMERAZAO ||
-                    //    MskTxbNumero.Text.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "") == _ObjClienteBO.NRTELEFONE.ToString() ||
-                    //    MskCpfCnpj.Text.Replace("-", "").Replace(".", "").Replace("/", "") == _ObjClienteBO.NRCPFCNPJ.ToString() ||
-                    //    TxbEndereco.Text == _ObjClienteBO.NMENDERECO)
-                    //{
-                    //    alterado = true;
-                    //}
+                    if (TxbNome.Text == _ObjFornecedorBO.NMNOME ||
+                        TxbEmail.Text == _ObjFornecedorBO.NMEMAIL ||
+                        TxbNomeRazao.Text == _ObjFornecedorBO.NMNOMERAZAO ||
+                        MskTxbNumero.Text.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "") == _ObjFornecedorBO.NRTELEFONE.ToString() ||
+                        MskCpfCnpj.Text.Replace("-", "").Replace(".", "").Replace("/", "") == _ObjFornecedorBO.NRCPFCNPJ.ToString() ||
+                        TxbEndereco.Text == _ObjFornecedorBO.NMENDERECO)
+                    {
+                        alterado = true;
+                    }
                 }
 
                 if (alterado)
@@ -164,17 +162,21 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
                 {
                     throw new Exception("Número é obrigatório");
                 }
+                if (MskCpfCnpj.Text != "  .   .   /    -")
+                {
+                    throw new Exception("CNPJ é obrigatório.");
+                }
 
                 _ObjFornecedorBO = new FornecedorBO
                     (
-                        //_IDFORNECEDOR,
-                        //Convert.ToInt64(MskCpfCnpj.Text.Replace("-", "").Replace(".", "").Replace("/", "")),
-                        //TxbNome.Text,
-                        //TxbNomeRazao.Text,
-                        //Convert.ToInt64(MskTxbNumero.Text.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "")),
-                        //TxbEmail.Text,
-                        //_IDENDERECO,
-                        //TxbEndereco.Text
+                        _IDFORNECEDOR,
+                        Convert.ToInt64(MskCpfCnpj.Text.Replace("-", "").Replace(".", "").Replace("/", "")),
+                        TxbNome.Text,
+                        TxbNomeRazao.Text,
+                        Convert.ToInt64(MskTxbNumero.Text.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "")),
+                        TxbEmail.Text,
+                        _IDENDERECO,
+                        TxbEndereco.Text
                     );
             }
             catch (Exception)

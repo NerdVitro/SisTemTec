@@ -57,7 +57,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
         {
             try
             {
-                //new FrmCadCliente(null).ShowDialog();
+                new FrmCadFornecedor(null).ShowDialog();
                 LoadDados();
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace SisTemTec.Formularios.Cadastro.Fornecedor
             {
                 if (DgvDados.CurrentRow != null)
                 {
-                    //new FrmCadCliente(new ManterCliente().GetClienteById(Convert.ToInt32(DgvDados.CurrentRow.Cells["IDCLIENTE"].Value))).ShowDialog();
+                    new FrmCadFornecedor(new ManterFornecedor().GetFornecedorById(Convert.ToInt32(DgvDados.CurrentRow.Cells["IDFORNECEDOR"].Value))).ShowDialog();
                 }
                 LoadDados();
             }
